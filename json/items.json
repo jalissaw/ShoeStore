@@ -1,0 +1,60 @@
+{
+    "items": [
+        {
+            "id": 1,
+            "title": "Purple Deluxe Nike",
+            "price": 120.99,
+            "image": "/imgs/purplenike2.png",
+            "button": 0
+        },
+        {
+            "id": 2,
+            "title": "Off-Pink Retro Nike",
+            "price": 99.99,
+            "image": "/imgs/offpinknike.png",
+            "button": 1
+        },
+        {
+            "id": 3,
+            "title": "Egg-Shell Plant Nike",
+            "price": 70.99,
+            "image": "imgs/greenishnike.png",
+            "button": 0
+        },
+        {
+            "id": 4,
+            "title": "Green Air Max Nike ",
+            "price": 115.99,
+            "image": "imgs/limegreennike2.png",
+            "button": 3
+        },
+        {
+            "id": 5,
+            "title": "Light Purple Elite Nike",
+            "price": 20.99,
+            "image": "imgs/lightpurplenike.png",
+            "button": 4
+        },
+        {
+            "id": 6,
+            "title": "Classic Blue Nike",
+            "price": 65.99,
+            "image": "imgs/classbluenike.png",
+            "button": 5
+        },
+        {
+            "id": 7,
+            "title": "Gold Plated Nike",
+            "price": 259.99,
+            "image": "imgs/classicgoldnike.png",
+            "button": 6
+        },
+        {
+            "id": 8,
+            "title": "Classic Grey Nike",
+            "price": 33.99,
+            "image": "imgs/classicgreynikeshoe.png",
+            "button": 7
+        }
+    ]
+}

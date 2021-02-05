@@ -1,0 +1,118 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.nav {
+  position: fixed;
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  height: 10vh;
+  width: 100%;
+  z-index: 5;
+}
+
+.nav .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+
+@media (min-width: 0px) and (max-width: 480px) {
+  .nav .links {
+    display: none;
+  }
+}
+
+.nav .links .link {
+  padding: 10px;
+  font-size: 1.2rem;
+}
+
+.nav .logo {
+  -webkit-animation-name: shuffleColor;
+          animation-name: shuffleColor;
+  -webkit-animation: shuffleColor 15s ease-in-out infinite alternate;
+          animation: shuffleColor 15s ease-in-out infinite alternate;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.nav .cart-container {
+  position: relative;
+}
+
+.nav .cart-container .fa-shopping-cart {
+  -webkit-animation-name: shuffleColor;
+          animation-name: shuffleColor;
+  -webkit-animation: shuffleColor 15s ease-in-out infinite alternate;
+          animation: shuffleColor 15s ease-in-out infinite alternate;
+  font-size: 1.5rem;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+
+.nav .cart-container .fa-shopping-cart:hover {
+  cursor: pointer;
+}
+
+.nav .cart-container .cart-items-container {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: -15px;
+  right: -15px;
+  width: 20px;
+  height: 20px;
+  background: black;
+  border-radius: 40px;
+  font-size: 0.9rem;
+  color: white;
+}
+
+@-webkit-keyframes shuffleColor {
+  0% {
+    color: #ca0000;
+  }
+  60% {
+    color: #adadad;
+  }
+  100% {
+    color: #3c97ff;
+  }
+}
+
+@keyframes shuffleColor {
+  0% {
+    color: #ca0000;
+  }
+  60% {
+    color: #adadad;
+  }
+  100% {
+    color: #3c97ff;
+  }
+}
+/*# sourceMappingURL=main.css.map */

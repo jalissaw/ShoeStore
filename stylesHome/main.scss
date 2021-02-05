@@ -1,0 +1,376 @@
+@import 'variables';
+
+header {
+    position: relative;
+    
+    .btn {
+        background: lightgrey;
+        margin-top: 5px;
+        padding: 5px;
+        border: none;
+        outline: none;
+        text-transform: uppercase;
+        transition: 0.4s ease;
+
+        &:hover {
+            color: white;
+            background: black;
+            cursor: pointer;
+        }
+    }
+
+    .hero-container {
+        display: flex;
+        width: 100%;
+        height: 90vh;
+
+        .img-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            position: relative;
+            width: 100%;
+            animation-name: shuffleHero;
+            animation: shuffleHero 15s ease-in-out infinite alternate;
+
+            .img-hero {
+                height: 100%;
+                width: 100%;
+                position: relative;
+            }
+
+        }
+
+    }
+
+    //menu-container styles
+
+    .cart-menu-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 50%;
+        transform: translateX(-100%);
+        background: lightgrey;
+        z-index: 10;
+        transition: 0.5s ease;
+        overflow-y: scroll;
+
+        @media #{$allphones} {
+            width: 100%;
+        }
+
+        &.open {
+            transform: translate(0%);
+        }
+
+        &.close {
+            transform: translate(-100%);
+        }
+
+        h2{
+            text-align: center;
+            font-weight: 100;
+        }
+
+        .btn {
+            background: white;
+            margin-top: 5px;
+            padding: 5px;
+            border: none;
+            outline: none;
+            text-transform: uppercase;
+            transition: 0.4s ease;
+    
+            &:hover {
+                color: white;
+                background: black;
+                cursor: pointer;
+            }
+        }
+    
+        
+        
+        .fa-times {
+            text-align: end;
+            padding: 20px;
+            font-size: 1.4rem;
+            transition: .4s ease;
+
+            &:hover {
+                color: rgb(202, 0, 0);
+                cursor: pointer;
+            }
+        }
+
+        .menu-img {
+            height: 125px;
+            width: 150px;
+
+            @media #{$allphones} {
+                height: 100px;
+                width: 125px;
+            }
+        }
+
+        .menu-product {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+
+            .menu-titles-container {
+                margin-left: 10px;
+
+                h2{
+                    font-size: 1rem;
+                    color: white;
+
+                    @media #{$allphones} {
+                        font-size: 0.9rem;
+                    }
+
+                    @media #{$mphones} {
+                        font-size: 0.8rem;
+                    }
+
+                    @media #{$xsphones} {
+                        font-size: 0.6rem;
+                    }
+                }
+
+                h3{
+                    font-size: 0.9rem;
+                    font-style: oblique;
+                }
+            }
+
+            .change-price-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 10px;
+
+                .fa-chevron-up:hover {
+                    transition: 0.4s ease-in-out;
+
+                    &:hover {
+                        transform: translateY(-5px);
+                        cursor: pointer;
+                    }
+                }
+
+                .fa-chevron-down:hover {
+                    transition: 0.4s ease-in-out;
+
+                    &:hover {
+                        transform: translateY(5px);
+                        cursor: pointer;
+                    }
+                }
+
+                p {
+                    margin: 0px 10px
+                }
+            }
+        }
+
+        .total-container {
+            bottom: 0;
+            padding: 10px;
+            width: 100%;
+            padding-top: 20px;
+
+            .total-price {
+                text-align: center;
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+
+//featured products container
+main {
+    width: 100%;
+
+    .featured-container {
+        width: 100%;
+        
+        
+        .featured-title {
+            margin: 0 auto;
+            font-size: 2rem;
+            text-align: center;
+            font-weight: 100;
+            margin-top: 75px;
+            padding: 10px;
+        }
+    }
+
+    .products-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        overflow: hidden;
+
+        .product {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            flex: 1 1 350px;
+            margin-top: 50px;
+            position: relative;
+
+            &:hover .img {
+                opacity: 0.5;
+            }
+
+            .img {
+                height: 450px;
+                width: 500px;
+                transition: 0.4s ease;
+
+                            
+                    @media #{$allphones} {
+                        height: 260px;
+                        width: 250px;
+                    }
+
+                &:hover ~ .cart-btn {
+                    width: 175px;
+                    opacity: 1;
+                }
+
+                &:hover {
+                    opacity: 0.5;
+                }
+            }
+
+            .item-title {
+                animation-name: shuffleColor;
+                animation: shuffleColor 15s ease-in-out infinite alternate;
+                font-weight: 200;
+                opacity: 0.8;
+                padding-top: 10px;
+            }
+
+            .price {
+                font-weight: 200;
+                font-style: oblique;
+            }
+
+            .fa-shopping-cart {
+                padding-right: 10px;
+                animation-name: shuffleColor;
+                animation: shuffleColor 15s ease-in-out infinite alternate;
+            }
+
+            .cart-btn {
+                position: absolute;
+                background: black;
+                color: white;
+                font-size: 1rem;
+                text-transform: uppercase;
+                border: none;
+                outline: none;
+                padding: 8px;
+                transition: 0.4s ease;
+                width: 0px;
+                opacity: 0;
+
+                &:hover {
+                    cursor: pointer;
+                    width: 175px;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .promo-container {
+        width: 100%;
+        overflow: hidden;
+        padding: 50px;
+
+        .promo {
+            width: 100%;
+            padding-top: 150px;
+
+            .promo-save {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+
+                h2 {
+                    text-align: center;
+                    padding: 10px;
+                    text-transform: uppercase;
+                    font-size: 3.5rem;
+                    font-weight: 100;
+
+                    @media #{$allphones} {
+                        font-size: 2rem;
+                    }
+
+                    @media #{$mphones} {
+                        font-size: 1.7rem;
+                    }
+
+                    @media #{$xsphones} {
+                        font-size: 1.4rem;
+                    }
+                }
+            }
+
+            .promo-img {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: rgb(224, 224, 224);
+                padding-bottom: 75px;
+                width: 100%;
+
+                @media #{$allphones} {
+                   padding-bottom: 25px;
+                }
+
+                .promo-shoe {
+                    transform: scale(3);
+                    object-fit: contain;
+                    height: 350px;
+
+                    @media #{$allphones} {
+                        transform: scale(2.5);
+                    }
+
+                    @media #{$mphones} {
+                        transform: scale(2);
+                    }
+                    @media #{$xsphones} {
+                        transform: scale(1.8);
+                    }
+                }
+    
+            }
+        }
+    }
+}
+
+@keyframes shuffleHero {
+    0%{background: url('/imgs/rednike2.png') no-repeat left center; background-size:600px 600px;}
+    60%{background: url('/imgs/covergreynikeshoe.png') no-repeat center right; background-size:500px 500px;}
+    100%{background: url('/imgs/bluenikeshoe.png') no-repeat center center; background-size:700px 700px;}
+}
+
+@keyframes shuffleColor {
+    0%{color: rgb(202, 0, 0) }
+    60%{color: rgb(173, 173, 173) }
+    100%{color: rgb(60, 151, 255) }
+}
