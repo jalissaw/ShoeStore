@@ -43,6 +43,8 @@ header .hero-container .img-container {
           align-items: center;
   position: relative;
   width: 100%;
+  -webkit-animation-name: shuffleHero;
+          animation-name: shuffleHero;
   -webkit-animation: shuffleHero 15s ease-in-out infinite alternate;
           animation: shuffleHero 15s ease-in-out infinite alternate;
 }
@@ -457,7 +459,6 @@ main .promo-container .promo .promo-img .promo-shoe {
 @-webkit-keyframes shuffleHero {
   0% {
     background: url("/imgs/rednike2.png") no-repeat left center;
-    background-size: 600px 600px;
   }
   60% {
     background: url("/imgs/covergreynikeshoe.png") no-repeat center right;
@@ -472,7 +473,6 @@ main .promo-container .promo .promo-img .promo-shoe {
 @keyframes shuffleHero {
   0% {
     background: url("/imgs/rednike2.png") no-repeat left center;
-    background-size: 600px 600px;
   }
   60% {
     background: url("/imgs/covergreynikeshoe.png") no-repeat center right;

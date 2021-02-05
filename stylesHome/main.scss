@@ -31,7 +31,7 @@ header {
             align-items: center;
             position: relative;
             width: 100%;
-            // animation-name: shuffleHero;
+            animation-name: shuffleHero;
             animation: shuffleHero 15s ease-in-out infinite alternate;
 
             .img-hero {
@@ -363,7 +363,7 @@ main {
 }
 
 @keyframes shuffleHero {
-    0%{background: url('/imgs/rednike2.png') no-repeat left center; background-size:600px 600px;}
+    0%{background: url('/imgs/rednike2.png') no-repeat left center; }
     60%{background: url('/imgs/covergreynikeshoe.png') no-repeat center right; background-size:500px 500px;}
     100%{background: url('/imgs/bluenikeshoe.png') no-repeat center center; background-size:700px 700px;}
 }
