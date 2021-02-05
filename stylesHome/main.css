@@ -43,8 +43,6 @@ header .hero-container .img-container {
           align-items: center;
   position: relative;
   width: 100%;
-  -webkit-animation-name: shuffleHero;
-          animation-name: shuffleHero;
   -webkit-animation: shuffleHero 15s ease-in-out infinite alternate;
           animation: shuffleHero 15s ease-in-out infinite alternate;
 }
