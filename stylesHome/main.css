@@ -458,7 +458,7 @@ main .promo-container .promo .promo-img .promo-shoe {
 
 @-webkit-keyframes shuffleHero {
   0% {
-    background: url("imgs/rednike2.png") no-repeat left center;
+    background: url("/imgs/rednike2.png") no-repeat left center;
     background-size: 600px 600px;
   }
   60% {
@@ -473,7 +473,7 @@ main .promo-container .promo .promo-img .promo-shoe {
 
 @keyframes shuffleHero {
   0% {
-    background: url("imgs/rednike2.png") no-repeat left center;
+    background: url("/imgs/rednike2.png") no-repeat left center;
     background-size: 600px 600px;
   }
   60% {

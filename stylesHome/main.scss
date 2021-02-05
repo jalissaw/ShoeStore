@@ -360,16 +360,16 @@ main {
             }
         }
     }
-}
 
-@keyframes shuffleHero {
-    0%{background: url('imgs/rednike2.png') no-repeat left center; background-size:600px 600px;}
-    60%{background: url('/imgs/covergreynikeshoe.png') no-repeat center right; background-size:500px 500px;}
-    100%{background: url('/imgs/bluenikeshoe.png') no-repeat center center; background-size:700px 700px;}
-}
-
-@keyframes shuffleColor {
-    0%{color: rgb(202, 0, 0) }
-    60%{color: rgb(173, 173, 173) }
-    100%{color: rgb(60, 151, 255) }
+    @keyframes shuffleHero {
+        0%{background: url('/imgs/rednike2.png') no-repeat left center; background-size:600px 600px;}
+        60%{background: url('/imgs/covergreynikeshoe.png') no-repeat center right; background-size:500px 500px;}
+        100%{background: url('/imgs/bluenikeshoe.png') no-repeat center center; background-size:700px 700px;}
+    }
+    
+    @keyframes shuffleColor {
+        0%{color: rgb(202, 0, 0) }
+        60%{color: rgb(173, 173, 173) }
+        100%{color: rgb(60, 151, 255) }
+    }
 }
