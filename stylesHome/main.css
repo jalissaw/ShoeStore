@@ -156,7 +156,6 @@ header .cart-menu-container .menu-product .menu-titles-container {
 
 header .cart-menu-container .menu-product .menu-titles-container h2 {
   font-size: 1rem;
-  color: white;
 }
 
 @media (min-width: 0px) and (max-width: 480px) {
@@ -459,30 +458,30 @@ main .promo-container .promo .promo-img .promo-shoe {
 
 @-webkit-keyframes shuffleHero {
   0% {
-    background: url("/imgs/rednike2.png") no-repeat left center;
+    background: url("imgs/rednike2.png") no-repeat left center;
     background-size: 600px 600px;
   }
   60% {
-    background: url("/imgs/covergreynikeshoe.png") no-repeat center right;
+    background: url("imgs/covergreynikeshoe.png") no-repeat center right;
     background-size: 500px 500px;
   }
   100% {
-    background: url("/imgs/bluenikeshoe.png") no-repeat center center;
+    background: url("imgs/bluenikeshoe.png") no-repeat center center;
     background-size: 700px 700px;
   }
 }
 
 @keyframes shuffleHero {
   0% {
-    background: url("/imgs/rednike2.png") no-repeat left center;
+    background: url("imgs/rednike2.png") no-repeat left center;
     background-size: 600px 600px;
   }
   60% {
-    background: url("/imgs/covergreynikeshoe.png") no-repeat center right;
+    background: url("imgs/covergreynikeshoe.png") no-repeat center right;
     background-size: 500px 500px;
   }
   100% {
-    background: url("/imgs/bluenikeshoe.png") no-repeat center center;
+    background: url("imgs/bluenikeshoe.png") no-repeat center center;
     background-size: 700px 700px;
   }
 }

@@ -4,14 +4,14 @@
             "id": 1,
             "title": "Purple Deluxe Nike",
             "price": 120.99,
-            "image": "/imgs/purplenike2.png",
+            "image": "imgs/purplenike2.png",
             "button": 0
         },
         {
             "id": 2,
             "title": "Off-Pink Retro Nike",
             "price": 99.99,
-            "image": "/imgs/offpinknike.png",
+            "image": "imgs/offpinknike.png",
             "button": 1
         },
         {
