@@ -9,14 +9,14 @@
         },
         {
             "id": 2,
-            "title": "Off-Pink Retro Nike",
+            "title": "Off Pink Retro Nike",
             "price": 99.99,
             "image": "imgs/offpinknike.png",
             "button": 1
         },
         {
             "id": 3,
-            "title": "Egg-Shell Plant Nike",
+            "title": "Egg Shell Plant Nike",
             "price": 70.99,
             "image": "imgs/greenishnike.png",
             "button": 0

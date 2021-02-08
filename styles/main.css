@@ -26,6 +26,15 @@
   z-index: 5;
 }
 
+@media (min-width: 0px) and (max-width: 480px) {
+  .nav {
+    height: 15vh;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
 .nav .links {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -51,6 +60,12 @@
           animation: shuffleColor 15s ease-in-out infinite alternate;
   font-size: 1.4rem;
   font-weight: 600;
+}
+
+@media (min-width: 0px) and (max-width: 480px) {
+  .nav .logo {
+    margin-left: 15px;
+  }
 }
 
 .nav .cart-container {

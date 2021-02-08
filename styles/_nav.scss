@@ -11,6 +11,10 @@
     height: 10vh;
     width: 100%;
     z-index: 5;
+    @media #{$allphones} {
+        height: 15vh;;
+        justify-content: space-evenly;
+    }
 
     
 
@@ -34,6 +38,10 @@
         animation: shuffleColor 15s ease-in-out infinite alternate;
         font-size: 1.4rem;
         font-weight: 600;
+        @media #{$allphones} {
+            margin-left: 15px;
+        }
+    
     }
 
     .cart-container {

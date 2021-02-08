@@ -249,6 +249,14 @@ main .featured-container .featured-title {
   padding: 10px;
 }
 
+main .featured-container .alan-mic {
+  text-align: center;
+}
+
+main .featured-container .alan-mic h4 {
+  font-size: 0.9rem;
+}
+
 main .products-container {
   display: -webkit-box;
   display: -ms-flexbox;
