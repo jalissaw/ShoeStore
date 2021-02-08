@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(data => {
             products.displayProducts(data.items)
             Storage.saveProducts(data.items);
+            products.voiceCommand(data.items)
         }).then(() => {
             products.getButtons()
             products.cartLogic()
@@ -67,10 +68,10 @@ class Products {
             button.addEventListener('click', (e) => {
                 let id = Number(button.dataset.id);
                 let cartItem = { ...Storage.getProduct(id), amount: 1 };
+                console.log(cartItem)
                 cart = [...cart, cartItem];
                 e.target.innerText = "In Cart";
                 e.target.disabled = true;
-                console.log(id, cartItem)
                 Storage.saveCart(cart);
                 this.addCartItem(cartItem);
                 this.setCartValues(cart);
@@ -96,7 +97,8 @@ class Products {
                     <i class="fas fa-chevron-down" data-id=${cartItem.id}></i>
                 </div>
             `
-        cartMenuItemsContainer.appendChild(div)
+        cartMenuItemsContainer.appendChild(div);
+        this.openCart()
     }
 
     setCartValues(cart) {
@@ -127,14 +129,15 @@ class Products {
     }
 
     closeCart() {
+
+        cartMenu.classList.remove('open');
         closeButton.addEventListener('click', () => {
             cartMenu.classList.remove('open');
         });
-
-        cartMenu.classList.remove('open');
     }
 
     cartLogic() {
+
         cartMenuItemsContainer.scrollTop = cartMenuItemsContainer.scrollHeight
         shoppingCartIcon.addEventListener('click', () => {
             cartMenu.classList.add('open');
@@ -188,6 +191,60 @@ class Products {
         return buttonsDOM.find(button => Number(button.dataset.id) === id);
     }
 
+    voiceCommand(data) {
+        const products = new Products();
+
+        let alanBtnInstance = alanBtn({
+            top: '15px',
+            left: '15px',
+            key: 'd9a862fcf1b4bafe16223c5c1bb1f8b32e956eca572e1d8b807a3e2338fdd0dc/stage',
+            onCommand: function (commandData) {
+                if (commandData.command === "opencart") {
+                    products.openCart();
+                }
+
+                else if (commandData.command === "closecart") {
+                    products.closeCart();
+                }
+
+                else if (commandData.command === "addItem") {
+                    // get cart Items to compare to commandData.name
+                    const cartItem = data
+                    cartItem.forEach(item => {
+                        return item.amount = 1
+                    });
+
+                    const item = cartItem.map(item => item)
+                        .find(item => item.title.toLowerCase() === commandData.name.toLowerCase());
+                    cart = [...cart, item]
+
+                    function hasDuplicates(arr) {
+                        return new Set(arr).size !== arr.length;
+                    }
+
+                    if (hasDuplicates(cart)) {
+                        alanBtnInstance.playText(`${item.title} is already in cart`);
+                        return
+                    } else {
+                        const buttons = [...document.querySelectorAll('.cart-btn')]
+                        buttonsDOM = buttons;
+                        buttons.forEach(button => {
+                            let id = button.dataset.id;
+                            let inCart = cart.find(item => item.id === Number(id));
+
+                            if (inCart) {
+                                button.innerText = "In Cart";
+                                button.disabled = true;
+                            }
+                        });
+                        products.addCartItem(item);
+                        products.setCartValues(cart);
+                    }
+                }
+            },
+            rootEl: document.getElementById("alan-btn"),
+        });
+    }
 }
 
 class Storage {
