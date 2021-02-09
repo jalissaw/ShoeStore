@@ -68,7 +68,6 @@ class Products {
             button.addEventListener('click', (e) => {
                 let id = Number(button.dataset.id);
                 let cartItem = { ...Storage.getProduct(id), amount: 1 };
-                console.log(cartItem)
                 cart = [...cart, cartItem];
                 e.target.innerText = "In Cart";
                 e.target.disabled = true;
@@ -209,6 +208,7 @@ class Products {
 
                 else if (commandData.command === "addItem") {
                     // get cart Items to compare to commandData.name
+
                     const cartItem = data
                     cartItem.forEach(item => {
                         return item.amount = 1
@@ -216,16 +216,15 @@ class Products {
 
                     const item = cartItem.map(item => item)
                         .find(item => item.title.toLowerCase() === commandData.name.toLowerCase());
-                    cart = [...cart, item]
+                    const dup = cart.find(item => item.title.toLowerCase() === commandData.name.toLowerCase());
 
-                    function hasDuplicates(arr) {
-                        return new Set(arr).size !== arr.length;
+                    if (dup) {
+                        alanBtnInstance.playText(`${item.title} is already in cart. Please try adding another item`);
+                        products.closeCart()
+                        return cart
                     }
-
-                    if (hasDuplicates(cart)) {
-                        alanBtnInstance.playText(`${item.title} is already in cart`);
-                        return
-                    } else {
+                    else {
+                        cart = [...cart, item]
                         const buttons = [...document.querySelectorAll('.cart-btn')]
                         buttonsDOM = buttons;
                         buttons.forEach(button => {
@@ -239,6 +238,8 @@ class Products {
                         });
                         products.addCartItem(item);
                         products.setCartValues(cart);
+                        products.openCart()
+                        return
                     }
                 }
             },
