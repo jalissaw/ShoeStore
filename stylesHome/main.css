@@ -67,7 +67,7 @@ header .cart-menu-container {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 100%;
-  width: 50%;
+  width: 550px;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
   background: lightgrey;
@@ -78,6 +78,12 @@ header .cart-menu-container {
 }
 
 @media (min-width: 0px) and (max-width: 480px) {
+  header .cart-menu-container {
+    width: 100%;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 800px) {
   header .cart-menu-container {
     width: 100%;
   }
